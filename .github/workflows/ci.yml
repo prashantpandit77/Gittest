@@ -1,0 +1,22 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run tests
+        run: echo "Running tests on ${{ github.repository }}"
+
+      - name: Validate files
+        run: ls -l
+
